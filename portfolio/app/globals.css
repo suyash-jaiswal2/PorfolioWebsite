@@ -15,7 +15,7 @@
   --color-copper:     #C47B2B;
 }
 
-html  { scroll-behavior: smooth; }
+html  { scroll-behavior: smooth; scroll-padding-top: 6rem; }
 body  { background-color: #F5F0E8; color: #1A1917; }
 h1, h2, h3 { font-family: var(--font-syne), sans-serif; }
 

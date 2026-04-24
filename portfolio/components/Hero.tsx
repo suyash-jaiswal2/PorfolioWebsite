@@ -28,7 +28,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1 {...rise(0.1)}
-              className="text-6xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-5"
+              className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-5"
             >
               Suyash<br />
               <span className="text-cobalt">Jaiswal</span>

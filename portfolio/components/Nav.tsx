@@ -35,7 +35,7 @@ export default function Nav() {
     }`}>
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        <a href="#" className="font-mono text-sm text-ink-muted hover:text-ink transition-colors">
+        <a href="#" className="flex items-center font-mono text-sm text-ink-muted hover:text-ink transition-colors">
           SJ<span className="text-cobalt font-bold">.</span>
         </a>
 

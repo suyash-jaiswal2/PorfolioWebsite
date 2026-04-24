@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 // ── EDIT YOUR SKILLS ────────────────────────────────────────────────────────
 const SKILLS: Record<string, string[]> = {
   Languages: ['C', 'C++', 'Python', 'Java', 'JavaScript'],
-  'Data Science': ['Pandas', 'Scikit-Learn', 'Seaborn', 'MatPlotLib', 'SQL', 'Postgres', 'Tablue', 'PowerBI'],
+  'Data Science': ['Pandas', 'Scikit-Learn', 'Seaborn', 'MatPlotLib', 'SQL', 'Postgres', 'Tableau', 'PowerBI'],
   'Web & Development': ['HTML5', 'CSS3', 'JavaScript', 'Node.js', 'Three.js', 'React.js', 'Angular.js', 'Next.js', 'TypeScript'],
   'Cloud & DevOps': ['AWS (EC2, S3)', 'Docker', 'Jenkins', 'SonarQube', 'Vercel', 'Render', 'HuggingFace', 'GitHub'],
   'AI Tools': ['Claude', 'GPTCodex', 'AntiGravity', 'Cursor', 'GitHub Copilot', 'GenAI Tools'],
@@ -33,7 +33,7 @@ export default function Skills() {
               className="grid grid-cols-1 sm:grid-cols-[130px_1fr] items-start gap-4 sm:gap-8"
             >
               <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest pt-1.5">{cat}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {list.map(skill => (
                   <span key={skill}
                     className="font-mono text-xs text-ink border border-rule bg-bg px-3 py-1.5 hover:border-cobalt hover:text-cobalt transition-colors duration-150 cursor-default"

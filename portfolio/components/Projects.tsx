@@ -64,20 +64,17 @@ export default function Projects() {
           initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="border border-rule mb-5 grid lg:grid-cols-2 group hover:border-cobalt transition-colors duration-300"
+          className="border border-rule mb-5 grid lg:grid-cols-2 group hover:border-cobalt hover:shadow-md hover:-translate-y-1 transition-all duration-300"
         >
-          {/* Thumbnail — replace the number with <img> once you have a screenshot */}
-          <div className="bg-surface h-56 lg:h-auto flex items-center justify-center border-b lg:border-b-0 lg:border-r border-rule group-hover:border-cobalt transition-colors duration-300 overflow-hidden">
-            <span className="select-none font-bold text-[140px] leading-none text-rule">
-              {FEATURED.num}
-            </span>
+          <div className="bg-surface h-56 lg:h-auto flex items-center justify-center border-b lg:border-b-0 lg:border-r border-rule group-hover:border-cobalt transition-colors duration-300 overflow-hidden relative">
+            <img src="/deepfake_thumbnail.png" alt={FEATURED.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
 
           <div className="p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-start justify-between mb-5">
                 <div>
-                  <p className="font-mono text-xs text-cobalt mb-1 uppercase tracking-widest">Featured</p>
+                  <p className="font-mono text-xs text-cobalt mb-1 uppercase tracking-widest">Featured &nbsp;·&nbsp; {FEATURED.num}</p>
                   <h3 className="text-xl font-bold">{FEATURED.name}</h3>
                   <p className="text-sm text-ink-muted mt-1">{FEATURED.tagline}</p>
                 </div>
@@ -106,7 +103,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="border border-rule p-6 flex flex-col gap-4 hover:border-cobalt transition-colors duration-300"
+              className="border border-rule p-6 flex flex-col gap-4 hover:border-cobalt hover:shadow-md hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1">
