@@ -20,8 +20,8 @@ export default function Hero() {
             <motion.div {...rise(0)} className="mb-8">
               <span className="inline-flex items-center gap-2 font-mono text-xs text-ink-muted border border-rule px-3 py-2">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                 </span>
                 Available · Graduating May 2027
               </span>
@@ -44,7 +44,7 @@ export default function Hero() {
             </motion.p>
 
             <motion.div {...rise(0.25)}
-              className="flex items-center gap-1.5 text-sm text-ink-faint mb-10"
+              className="flex items-center gap-1.5 text-sm text-ink-muted mb-10"
             >
               <MapPin size={12} />
               <span className="font-mono">MIT World Peace University &nbsp;·&nbsp; Pune, Maharashtra</span>
@@ -77,13 +77,13 @@ export default function Hero() {
               { label: 'CGPA',   value: '7.39 / 10' },
             ].map((item) => (
               <div key={item.label} className="border-l-2 border-rule pl-4 space-y-0.5">
-                <p className="font-mono text-[10px] text-ink-faint uppercase tracking-widest">{item.label}</p>
+                <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest">{item.label}</p>
                 <p className="text-sm text-ink">{item.value}</p>
               </div>
             ))}
             <div className="border-l-2 border-cobalt pl-4 space-y-0.5">
-              <p className="font-mono text-[10px] text-ink-faint uppercase tracking-widest">Status</p>
-              <p className="text-sm text-green-600 font-medium">Open to work</p>
+              <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest">Status</p>
+              <p className="text-sm text-emerald-600 font-medium">Open to work</p>
             </div>
           </motion.div>
         </div>
@@ -101,13 +101,13 @@ export default function Hero() {
               { label: 'LeetCode', href: 'https://leetcode.com/u/suyash_jaiswal_/' },
             ].map((link) => (
               <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
-                className="font-mono text-xs text-ink-faint hover:text-cobalt transition-colors"
+                className="font-mono text-xs text-ink-muted hover:text-cobalt transition-colors"
               >
                 {link.label} ↗
               </a>
             ))}
           </div>
-          <span className="font-mono text-xs text-ink-faint">scroll to explore ↓</span>
+          <span className="font-mono text-xs text-ink-muted">scroll to explore ↓</span>
         </motion.div>
       </div>
     </section>

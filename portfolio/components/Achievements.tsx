@@ -57,7 +57,7 @@ const ITEMS: {
 ]
 // ────────────────────────────────────────────────────────────────────────────
 
-const ACCENT = { cobalt: 'text-cobalt', copper: 'text-copper', green: 'text-green-600' }
+const ACCENT = { cobalt: 'text-cobalt', copper: 'text-copper', green: 'text-emerald-600' }
 
 export default function Achievements() {
   return (
@@ -65,9 +65,9 @@ export default function Achievements() {
       <div className="max-w-6xl mx-auto">
 
         <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
-          <span className="font-mono text-xs text-ink-faint">03</span>
+          <span className="font-mono text-xs text-ink-muted">03</span>
           <h2 className="text-2xl font-bold tracking-tight">Achievements</h2>
-          <span className="font-mono text-xs text-ink-faint ml-auto">{ITEMS.length} highlights</span>
+          <span className="font-mono text-xs text-ink-muted ml-auto">{ITEMS.length} highlights</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -89,7 +89,7 @@ export default function Achievements() {
                       <h3 className="font-semibold text-sm leading-snug">{item.title}</h3>
                       <p className="font-mono text-xs text-cobalt mt-0.5">{item.org}</p>
                     </div>
-                    <span className="font-mono text-xs text-ink-faint shrink-0">{item.year}</span>
+                    <span className="font-mono text-xs text-ink-muted shrink-0">{item.year}</span>
                   </div>
                   <p className="text-sm text-ink-muted leading-relaxed">{item.description}</p>
                 </div>

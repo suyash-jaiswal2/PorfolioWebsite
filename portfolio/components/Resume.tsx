@@ -7,6 +7,7 @@ const CERTS = [
   { name: 'Industry Ready Tech Foundations',         issuer: 'LNT Edutech', year: '2026', href: 'https://drive.google.com/file/d/1pLd-Dx1br-Qhyh7v5rd2B5i_2YGu8N5A/view?usp=sharing', id: 'LTET/JAN26/NAIP/B3/0041' },
   { name: 'Google AI for Anyone',          issuer: 'Google',   year: '2024', href: 'https://courses.edx.org/certificates/85894c91771249ceaacf0325af5822b3', id: '85894c91771249ceaacf0325af5822b3' },
   { name: 'Data Visualization and Building Dashboards with Excel and Cognos',   issuer: 'IBM',     year: '2024', href: 'https://courses.edx.org/certificates/f501d397b57543b69924a18984fda431', id: 'f501d397b57543b69924a18984fda431' },
+  { name: 'Java Programming Fundamentals',        issuer: 'Infosys Springboard',     year: '2026', id: ''},
   { name: 'Critical Thinking & Problem Solving',        issuer: 'RITx',     year: '2024', href: 'https://courses.edx.org/certificates/56d9d51679a8449cbe7ba18241e6c559', id: '56d9d51679a8449cbe7ba18241e6c559'},
   { name: 'Teamwork & Collaboration', issuer: 'RITx',           year: '2024', href: 'https://courses.edx.org/certificates/e648c7200e2244cd9cad9e670fbea087', id: 'e648c7200e2244cd9cad9e670fbea087' },
   { name: 'Measuring Sustainable Development',     issuer: 'SDGAcademyX',          year: '2024', href: 'https://courses.edx.org/certificates/5bed7c081ca74effbb651d0ea484e7fa', id: '5bed7c081ca74effbb651d0ea484e7fa' },
@@ -28,7 +29,7 @@ export default function Resume() {
       <div className="max-w-6xl mx-auto">
 
         <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
-          <span className="font-mono text-xs text-ink-faint">04</span>
+          <span className="font-mono text-xs text-ink-muted">04</span>
           <h2 className="text-2xl font-bold tracking-tight">Resume &amp; Credentials</h2>
         </div>
 
@@ -45,7 +46,7 @@ export default function Resume() {
                 <FileText size={14} className="text-cobalt" />
                 <span className="font-semibold text-sm">Resume</span>
               </div>
-              <p className="font-mono text-xs text-ink-faint mb-1">Last updated · April 2026</p>
+              <p className="font-mono text-xs text-ink-muted mb-1">Last updated · April 2026</p>
               <p className="text-xs text-ink-muted mb-5">One-page · ATS-optimized · PDF</p>
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-cobalt text-white text-sm w-full py-3 hover:bg-cobalt-dim transition-colors"
@@ -55,7 +56,7 @@ export default function Resume() {
             </motion.div>
 
             <div>
-              <p className="font-mono text-[10px] text-ink-faint uppercase tracking-widest mb-3">Profiles</p>
+              <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest mb-3">Profiles</p>
               <div className="space-y-2">
                 {PROFILES.map(p => (
                   <a key={p.label} href={p.href} target="_blank" rel="noopener noreferrer"
@@ -63,9 +64,9 @@ export default function Resume() {
                   >
                     <div>
                       <p className="text-sm font-medium">{p.label}</p>
-                      <p className="font-mono text-xs text-ink-faint">{p.url}</p>
+                      <p className="font-mono text-xs text-ink-muted">{p.url}</p>
                     </div>
-                    <ExternalLink size={12} className="text-ink-faint group-hover:text-cobalt transition-colors" />
+                    <ExternalLink size={12} className="text-ink-muted group-hover:text-cobalt transition-colors" />
                   </a>
                 ))}
               </div>
@@ -74,7 +75,7 @@ export default function Resume() {
 
           {/* RIGHT */}
           <div>
-            <p className="font-mono text-[10px] text-ink-faint uppercase tracking-widest mb-6">Certifications</p>
+            <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest mb-6">Certifications</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
               {CERTS.map((cert, i) => (
                 <motion.a key={cert.name} href={cert.href} target="_blank" rel="noopener noreferrer"
@@ -85,13 +86,13 @@ export default function Resume() {
                 >
                   <div className="flex items-center justify-between mb-3">
                     <Award size={13} className="text-copper" />
-                    <span className="font-mono text-xs text-ink-faint">{cert.year}</span>
+                    <span className="font-mono text-xs text-ink-muted">{cert.year}</span>
                   </div>
                   <h3 className="text-xs font-semibold leading-snug mb-1 group-hover:text-cobalt transition-colors">
                     {cert.name}
                   </h3>
-                  <p className="font-mono text-[10px] text-ink-faint">{cert.issuer}</p>
-                  <p className="font-mono text-[10px] text-rule mt-2 group-hover:text-ink-faint transition-colors">
+                  <p className="font-mono text-[10px] text-ink-muted">{cert.issuer}</p>
+                  <p className="font-mono text-[10px] text-rule mt-2 group-hover:text-ink-muted transition-colors">
                     {cert.id}
                   </p>
                 </motion.a>

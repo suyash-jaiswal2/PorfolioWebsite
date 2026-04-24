@@ -35,7 +35,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto">
 
         <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
-          <span className="font-mono text-xs text-ink-faint">05</span>
+          <span className="font-mono text-xs text-ink-muted">05</span>
           <h2 className="text-2xl font-bold tracking-tight">Contact</h2>
         </div>
 
@@ -67,13 +67,13 @@ export default function Contact() {
                   className="flex items-center justify-between border border-rule px-5 py-4 hover:border-cobalt hover:bg-surface transition-all group"
                 >
                   <div className="flex items-center gap-4">
-                    <Icon size={14} className="text-ink-faint group-hover:text-cobalt transition-colors" />
+                    <Icon size={14} className="text-ink-muted group-hover:text-cobalt transition-colors" />
                     <div>
-                      <p className="font-mono text-[10px] text-ink-faint uppercase tracking-widest">{label}</p>
+                      <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest">{label}</p>
                       <p className="text-sm text-ink mt-0.5">{value}</p>
                     </div>
                   </div>
-                  <ArrowUpRight size={13} className="text-ink-faint group-hover:text-cobalt transition-colors" />
+                  <ArrowUpRight size={13} className="text-ink-muted group-hover:text-cobalt transition-colors" />
                 </a>
               ))}
             </div>
@@ -84,12 +84,12 @@ export default function Contact() {
             initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-mono text-[10px] text-ink-faint uppercase tracking-widest mb-6">Send a quick note</p>
+            <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest mb-6">Send a quick note</p>
 
             {status === 'sent' ? (
-              <div className="border border-green-300 bg-green-50 p-8 text-center">
-                <p className="font-semibold text-green-700 mb-1">Message sent.</p>
-                <p className="text-sm text-green-600">I&apos;ll get back to you within 12 hours.</p>
+              <div className="border border-emerald-300 bg-emerald-50 p-8 text-center">
+                <p className="font-semibold text-emerald-700 mb-1">Message sent.</p>
+                <p className="text-sm text-emerald-600">I&apos;ll get back to you within 12 hours.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -120,15 +120,15 @@ export default function Contact() {
                   <Send size={13} />
                   {status === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
-                <p className="font-mono text-xs text-ink-faint text-center">Usually responds within 12 hours.</p>
+                <p className="font-mono text-xs text-ink-muted text-center">Usually responds within 12 hours.</p>
               </form>
             )}
           </motion.div>
         </div>
 
         <div className="border-t border-rule mt-24 pt-8 flex flex-wrap items-center justify-between gap-4">
-          <span className="font-mono text-xs text-ink-faint">Suyash Jaiswal · {new Date().getFullYear()}</span>
-          <span className="font-mono text-xs text-ink-faint">Next.js · Tailwind · Vercel</span>
+          <span className="font-mono text-xs text-ink-muted">Suyash Jaiswal · {new Date().getFullYear()}</span>
+          <span className="font-mono text-xs text-ink-muted">Next.js · Tailwind · Vercel</span>
         </div>
       </div>
     </section>

@@ -20,7 +20,7 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto">
 
         <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
-          <span className="font-mono text-xs text-ink-faint">02</span>
+          <span className="font-mono text-xs text-ink-muted">02</span>
           <h2 className="text-2xl font-bold tracking-tight">Skills</h2>
         </div>
 
@@ -32,7 +32,7 @@ export default function Skills() {
               transition={{ duration: 0.45, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
               className="grid grid-cols-1 sm:grid-cols-[130px_1fr] items-start gap-4 sm:gap-8"
             >
-              <p className="font-mono text-[10px] text-ink-faint uppercase tracking-widest pt-1.5">{cat}</p>
+              <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest pt-1.5">{cat}</p>
               <div className="flex flex-wrap gap-2">
                 {list.map(skill => (
                   <span key={skill}

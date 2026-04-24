@@ -54,9 +54,9 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
 
         <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
-          <span className="font-mono text-xs text-ink-faint">01</span>
+          <span className="font-mono text-xs text-ink-muted">01</span>
           <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
-          <span className="font-mono text-xs text-ink-faint ml-auto">{PROJECTS.length + 1} selected works</span>
+          <span className="font-mono text-xs text-ink-muted ml-auto">{PROJECTS.length + 1} selected works</span>
         </div>
 
         {/* Featured */}
@@ -83,9 +83,9 @@ export default function Projects() {
                 </div>
                 <div className="flex gap-3 shrink-0 ml-4">
                   <a href={FEATURED.github} target="_blank" rel="noopener noreferrer"
-                    className="text-ink-faint hover:text-cobalt transition-colors"><FaGithub size={15} /></a>
+                    className="text-ink-muted hover:text-cobalt transition-colors"><FaGithub size={15} /></a>
                   <a href={FEATURED.live} target="_blank" rel="noopener noreferrer"
-                    className="text-ink-faint hover:text-cobalt transition-colors"><ExternalLink size={15} /></a>
+                    className="text-ink-muted hover:text-cobalt transition-colors"><ExternalLink size={15} /></a>
                 </div>
               </div>
               <p className="text-sm text-ink-muted leading-relaxed mb-5">{FEATURED.description}</p>
@@ -110,16 +110,16 @@ export default function Projects() {
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1">
-                  <p className="font-mono text-xs text-ink-faint mb-1">{p.num}</p>
+                  <p className="font-mono text-xs text-ink-muted mb-1">{p.num}</p>
                   <h3 className="font-bold text-sm">{p.name}</h3>
                   <p className="text-xs text-ink-muted mt-1 leading-relaxed">{p.tagline}</p>
                 </div>
                 <div className="flex gap-2 shrink-0">
                   <a href={p.github} target="_blank" rel="noopener noreferrer"
-                    className="text-ink-faint hover:text-cobalt transition-colors"><FaGithub size={13} /></a>
+                    className="text-ink-muted hover:text-cobalt transition-colors"><FaGithub size={13} /></a>
                   {p.live && (
                     <a href={p.live} target="_blank" rel="noopener noreferrer"
-                      className="text-ink-faint hover:text-cobalt transition-colors"><ExternalLink size={13} /></a>
+                      className="text-ink-muted hover:text-cobalt transition-colors"><ExternalLink size={13} /></a>
                   )}
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function Projects() {
                 {p.stack.map(t => <Tag key={t} label={t} />)}
               </div>
               <div className="mt-auto pt-3 border-t border-rule">
-                <p className="font-mono text-xs text-ink-faint">↳ {p.outcome}</p>
+                <p className="font-mono text-xs text-ink-muted">↳ {p.outcome}</p>
               </div>
             </motion.div>
           ))}
