@@ -35,10 +35,10 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p {...rise(0.2)}
-              className="text-lg lg:text-xl text-ink-muted max-w-xl leading-relaxed mb-4"
+              className="text-lg lg:text-xl text-ink max-w-xl leading-relaxed mb-4"
             >
               Computer Science Engineer.{' '}
-              <span className="text-ink">
+              <span className="text-ink-muted">
                 I build systems that scale, interfaces that think, and tools that actually get used.
               </span>
             </motion.p>
