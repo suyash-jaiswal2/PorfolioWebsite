@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { ArrowRight, Download, MapPin } from 'lucide-react'
+import TopoBackground from '@/components/TopoBackground'
 
 const rise = (delay = 0) => ({
   initial:    { opacity: 0, y: 22 },
@@ -10,7 +11,8 @@ const rise = (delay = 0) => ({
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-24 pb-12 px-6">
+    <section className="relative overflow-hidden min-h-screen flex flex-col justify-center pt-24 pb-12 px-6">
+      <TopoBackground opacity={0.9} />
       <div className="max-w-6xl mx-auto w-full">
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-12 lg:gap-24 items-end mb-12">
