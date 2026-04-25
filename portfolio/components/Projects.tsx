@@ -1,8 +1,9 @@
 'use client'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ExternalLink } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 import NodesBackground from '@/components/NodesBackground'
+import Image from 'next/image'
 
 // ── EDIT YOUR DATA ──────────────────────────────────────────────────────────
 const FEATURED = {
@@ -62,14 +63,14 @@ export default function Projects() {
         </div>
 
         {/* Featured */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="border border-rule mb-5 grid lg:grid-cols-2 group hover:border-cobalt hover:shadow-md hover:-translate-y-1 transition-all duration-300"
         >
           <div className="bg-surface h-56 lg:h-auto flex items-center justify-center border-b lg:border-b-0 lg:border-r border-rule group-hover:border-cobalt transition-colors duration-300 overflow-hidden relative">
-            <img src="/deepfake_thumbnail.png" alt={FEATURED.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <Image src="/deepfake_thumbnail.png" alt={FEATURED.name} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
 
           <div className="p-8 flex flex-col justify-between">
@@ -96,12 +97,12 @@ export default function Projects() {
               <p className="font-mono text-xs text-ink-muted">↳ {FEATURED.outcome}</p>
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Secondary grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {PROJECTS.map((p, i) => (
-            <motion.div key={p.num}
+            <m.div key={p.num}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
@@ -128,7 +129,7 @@ export default function Projects() {
               <div className="mt-auto pt-3 border-t border-rule">
                 <p className="font-mono text-xs text-ink-muted">↳ {p.outcome}</p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

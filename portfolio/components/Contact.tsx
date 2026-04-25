@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Mail, ArrowUpRight, Send } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { useState } from 'react'
@@ -44,7 +44,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           {/* LEFT */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
@@ -79,10 +79,10 @@ export default function Contact() {
                 </a>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* RIGHT: form */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
@@ -125,7 +125,7 @@ export default function Contact() {
                 <p className="font-mono text-xs text-ink-muted text-center">Usually responds within 12 hours.</p>
               </form>
             )}
-          </motion.div>
+          </m.div>
         </div>
 
         <div className="border-t border-rule mt-24 pt-8 flex flex-wrap items-center justify-between gap-4">

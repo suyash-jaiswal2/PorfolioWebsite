@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import NodesBackground from '@/components/NodesBackground'
 
 // ── EDIT YOUR SKILLS ────────────────────────────────────────────────────────
@@ -28,7 +28,7 @@ export default function Skills() {
 
         <div className="space-y-8">
           {Object.entries(SKILLS).map(([cat, list], i) => (
-            <motion.div key={cat}
+            <m.div key={cat}
               initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.45, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
@@ -44,7 +44,7 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

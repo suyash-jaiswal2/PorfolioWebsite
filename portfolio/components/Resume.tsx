@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Download, ExternalLink, Award, FileText } from 'lucide-react'
 
 // ── EDIT YOUR DATA ──────────────────────────────────────────────────────────
@@ -37,7 +37,7 @@ export default function Resume() {
 
           {/* LEFT */}
           <div className="space-y-6">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.5 }}
               className="border border-rule bg-bg p-6"
@@ -53,7 +53,7 @@ export default function Resume() {
               >
                 <Download size={13} /> Download Resume
               </a>
-            </motion.div>
+            </m.div>
 
             <div>
               <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest mb-3">Profiles</p>
@@ -78,7 +78,7 @@ export default function Resume() {
             <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest mb-6">Certifications</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
               {CERTS.map((cert, i) => (
-                <motion.a key={cert.name} href={cert.href} target="_blank" rel="noopener noreferrer"
+                <m.a key={cert.name} href={cert.href} target="_blank" rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-30px' }}
                   transition={{ duration: 0.4, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
@@ -95,7 +95,7 @@ export default function Resume() {
                   <p className="font-mono text-[10px] text-rule mt-2 group-hover:text-ink-muted transition-colors">
                     {cert.id}
                   </p>
-                </motion.a>
+                </m.a>
               ))}
             </div>
           </div>

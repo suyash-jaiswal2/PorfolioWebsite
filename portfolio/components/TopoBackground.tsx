@@ -10,7 +10,7 @@ export default function TopoBackground({ opacity = 1 }: { opacity?: number }) {
     const ctx = canvas.getContext('2d', { alpha: true })
     if (!ctx) return
 
-    let animId: number
+    let animId: number = 0
     let t = 0
     let lastTime = 0
     let running = true
@@ -25,8 +25,11 @@ export default function TopoBackground({ opacity = 1 }: { opacity?: number }) {
     }
 
     const draw = (now: number) => {
+      if (!running) {
+        animId = 0
+        return
+      }
       animId = requestAnimationFrame(draw)
-      if (!running) return
       if (now - lastTime < INTERVAL) return
       lastTime = now
 
@@ -81,12 +84,22 @@ export default function TopoBackground({ opacity = 1 }: { opacity?: number }) {
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => { running = entry.isIntersecting },
+      ([entry]) => { 
+        running = entry.isIntersecting
+        if (running && animId === 0) {
+          animId = requestAnimationFrame(draw)
+        }
+      },
       { threshold: 0 }
     )
     observer.observe(canvas)
 
-    const onVisibility = () => { running = document.visibilityState === 'visible' }
+    const onVisibility = () => { 
+      running = document.visibilityState === 'visible'
+      if (running && animId === 0) {
+        animId = requestAnimationFrame(draw)
+      }
+    }
     document.addEventListener('visibilitychange', onVisibility)
 
     resize()

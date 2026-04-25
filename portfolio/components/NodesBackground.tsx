@@ -10,13 +10,13 @@ export default function NodesBackground({ opacity = 1 }: { opacity?: number }) {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    let animId: number
+    let animId: number = 0
     let lastTime = 0
     let running = true
     const FPS = 16
     const INTERVAL = 1000 / FPS
-    const NODE_COUNT = 60
-    const s = window.devicePixelRatio || 1
+    const NODE_COUNT = 40
+    const s = 1 // intentionally ignore retina to save GPU fill-rate
 
     type Node = { x: number; y: number; vx: number; vy: number; r: number }
     const nodes: Node[] = []
@@ -43,7 +43,10 @@ export default function NodesBackground({ opacity = 1 }: { opacity?: number }) {
     const CONNECT_DIST = 75 * s
 
     const draw = (now: number) => {
-      if (!running) { animId = requestAnimationFrame(draw); return }
+      if (!running) {
+        animId = 0
+        return
+      }
       animId = requestAnimationFrame(draw)
       if (now - lastTime < INTERVAL) return
       lastTime = now
@@ -84,12 +87,22 @@ export default function NodesBackground({ opacity = 1 }: { opacity?: number }) {
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => { running = entry.isIntersecting },
+      ([entry]) => { 
+        running = entry.isIntersecting
+        if (running && animId === 0) {
+          animId = requestAnimationFrame(draw)
+        }
+      },
       { threshold: 0 }
     )
     observer.observe(canvas)
 
-    const onVisibility = () => { running = document.visibilityState === 'visible' }
+    const onVisibility = () => { 
+      running = document.visibilityState === 'visible' 
+      if (running && animId === 0) {
+        animId = requestAnimationFrame(draw)
+      }
+    }
     document.addEventListener('visibilitychange', onVisibility)
 
     resize()

@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Trophy, Star, Code2, Award, Users, BookOpen } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import NodesBackground from '@/components/NodesBackground'
@@ -76,7 +76,7 @@ export default function Achievements() {
           {ITEMS.map((item, i) => {
             const Icon = item.icon
             return (
-              <motion.div key={item.title}
+              <m.div key={item.title}
                 initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
@@ -95,7 +95,7 @@ export default function Achievements() {
                   </div>
                   <p className="text-sm text-ink-muted leading-relaxed">{item.description}</p>
                 </div>
-              </motion.div>
+              </m.div>
             )
           })}
         </div>

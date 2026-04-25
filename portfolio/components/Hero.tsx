@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ArrowRight, Download, MapPin } from 'lucide-react'
 import TopoBackground from '@/components/TopoBackground'
 
@@ -19,7 +19,7 @@ export default function Hero() {
 
           {/* LEFT */}
           <div>
-            <motion.div {...rise(0)} className="mb-8">
+            <m.div {...rise(0)} className="mb-8">
               <span className="inline-flex items-center gap-2 font-mono text-xs text-ink-muted border border-rule px-3 py-2">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -27,32 +27,32 @@ export default function Hero() {
                 </span>
                 Available · Graduating May 2027
               </span>
-            </motion.div>
+            </m.div>
 
-            <motion.h1 {...rise(0.1)}
+            <m.h1 {...rise(0.1)}
               className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-5"
             >
               Suyash<br />
               <span className="text-cobalt">Jaiswal</span>
-            </motion.h1>
+            </m.h1>
 
-            <motion.p {...rise(0.2)}
+            <m.p {...rise(0.2)}
               className="text-lg lg:text-xl text-ink max-w-xl leading-relaxed mb-4"
             >
               Computer Science Engineer.{' '}
               <span className="text-ink-muted">
                 I build systems that scale, interfaces that think, and tools that actually get used.
               </span>
-            </motion.p>
+            </m.p>
 
-            <motion.div {...rise(0.25)}
+            <m.div {...rise(0.25)}
               className="flex items-center gap-1.5 text-sm text-ink-muted mb-10"
             >
               <MapPin size={12} />
               <span className="font-mono">MIT World Peace University &nbsp;·&nbsp; Pune, Maharashtra</span>
-            </motion.div>
+            </m.div>
 
-            <motion.div {...rise(0.3)} className="flex flex-wrap items-center gap-4">
+            <m.div {...rise(0.3)} className="flex flex-wrap items-center gap-4">
               <a href="#projects"
                 className="inline-flex items-center gap-2 bg-cobalt text-white text-sm font-medium px-6 py-3 hover:bg-cobalt-dim transition-colors duration-200"
               >
@@ -63,11 +63,11 @@ export default function Hero() {
               >
                 <Download size={14} /> Resume
               </a>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* RIGHT: metadata */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
@@ -87,11 +87,11 @@ export default function Hero() {
               <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest">Status</p>
               <p className="text-sm text-emerald-600 font-medium">Open to work</p>
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Bottom strip */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="border-t border-rule pt-5 flex flex-wrap items-center justify-between gap-4"
@@ -110,7 +110,7 @@ export default function Hero() {
             ))}
           </div>
           <span className="font-mono text-xs text-ink-muted">scroll to explore ↓</span>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )
