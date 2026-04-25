@@ -6,11 +6,11 @@ import { useState } from 'react'
 import TopoBackground from '@/components/TopoBackground'
 
 // ── EDIT YOUR INFO ───────────────────────────────────────────────────────────
-const EMAIL      = 'jaiswalsuyash631@gmail.com'
-const GITHUB     = 'https://github.com/suyashjaiswal-gif'
-const LINKEDIN   = 'https://www.linkedin.com/in/suyash-jaiswal-801815350'
+const EMAIL = 'jaiswalsuyash631@gmail.com'
+const GITHUB = 'https://github.com/suyashjaiswal-gif'
+const LINKEDIN = 'https://www.linkedin.com/in/suyash-jaiswal-801815350'
 // Sign up free at formspree.io → create a form → paste the endpoint below
-const FORMSPREE  = 'https://formspree.io/f/xojyygow'
+const FORMSPREE = 'https://formspree.io/f/xojyygow'
 // ────────────────────────────────────────────────────────────────────────────
 
 export default function Contact() {
@@ -34,7 +34,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden px-6 py-32">
       <TopoBackground opacity={0.6} />
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
           <span className="font-mono text-xs text-ink-muted">05</span>
@@ -60,8 +60,8 @@ export default function Contact() {
 
             <div className="space-y-2">
               {[
-                { icon: Mail,     label: 'Email',    value: EMAIL,                      href: `mailto:${EMAIL}` },
-                { icon: FaGithub,   label: 'GitHub',   value: 'github.com/suyashjaiswal-gif',  href: GITHUB },
+                { icon: Mail, label: 'Email', value: EMAIL, href: `mailto:${EMAIL}` },
+                { icon: FaGithub, label: 'GitHub', value: 'github.com/suyashjaiswal-gif', href: GITHUB },
                 { icon: FaLinkedin, label: 'LinkedIn', value: 'linkedin.com/in/suyash-jaiswal', href: LINKEDIN },
               ].map(({ icon: Icon, label, value, href }) => (
                 <a key={label} href={href}
@@ -96,8 +96,8 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 {[
-                  { name: 'name',    label: 'Your name',  type: 'text',  placeholder: 'Jane Smith' },
-                  { name: 'email',   label: 'Your email', type: 'email', placeholder: 'jane@company.com' },
+                  { name: 'name', label: 'Your name', type: 'text', placeholder: 'Jane Smith' },
+                  { name: 'email', label: 'Your email', type: 'email', placeholder: 'jane@company.com' },
                 ].map(f => (
                   <div key={f.name}>
                     <label className="font-mono text-xs text-ink-muted block mb-2">{f.label}</label>
