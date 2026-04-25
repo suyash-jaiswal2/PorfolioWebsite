@@ -1,18 +1,19 @@
 'use client'
 import { motion } from 'framer-motion'
 import { ExternalLink } from 'lucide-react'
-import { FaGithub} from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
+import NodesBackground from '@/components/NodesBackground'
 
 // ── EDIT YOUR DATA ──────────────────────────────────────────────────────────
 const FEATURED = {
-  num:         '01',
-  name:        'DeepFake Detection Model',
-  tagline:     'Detects Morphed faces and StyleGAN generated faces in real time',
+  num: '01',
+  name: 'DeepFake Detection Model',
+  tagline: 'Detects Morphed faces and StyleGAN generated faces in real time',
   description: 'Trained and deployed a Deep Learning model to detect Deepfake face images with upto 99% validation accuracy. Used EfficientNet B-4 for transfer learning on over 200k sample images. Deployed using huggingface spaces and vercel',
-  stack:       ['Python', 'Deep Learning', 'CNN', 'Computer Vision', 'Node.js'],
-  outcome:     'Realtime Detection · 95% Accuracy in testing',
-  github:      'https://github.com/suyashjaiswal-gif/deepfake-detector',
-  live:        'https://deepfake-detector-gray.vercel.app/',
+  stack: ['Python', 'Deep Learning', 'CNN', 'Computer Vision', 'Node.js'],
+  outcome: 'Realtime Detection · 95% Accuracy in testing',
+  github: 'https://github.com/suyashjaiswal-gif/deepfake-detector',
+  live: 'https://deepfake-detector-gray.vercel.app/',
 }
 
 const PROJECTS = [
@@ -50,8 +51,9 @@ function Tag({ label }: { label: string }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="px-6 py-28">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="relative overflow-hidden px-6 py-28">
+      <NodesBackground opacity={0.7} />
+      <div className="relative z-10 max-w-6xl mx-auto">
 
         <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
           <span className="font-mono text-xs text-ink-muted">01</span>

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Mail, ArrowUpRight, Send } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { useState } from 'react'
+import TopoBackground from '@/components/TopoBackground'
 
 // ── EDIT YOUR INFO ───────────────────────────────────────────────────────────
 const EMAIL      = 'jaiswalsuyash631@gmail.com'
@@ -31,8 +32,9 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="px-6 py-32">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="relative overflow-hidden px-6 py-32">
+      <TopoBackground opacity={0.6} />
+      <div className="relative z-10 max-w-6xl mx-auto">
 
         <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
           <span className="font-mono text-xs text-ink-muted">05</span>

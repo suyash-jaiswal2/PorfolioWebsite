@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import NodesBackground from '@/components/NodesBackground'
 
 // ── EDIT YOUR SKILLS ────────────────────────────────────────────────────────
 const SKILLS: Record<string, string[]> = {
@@ -10,14 +11,15 @@ const SKILLS: Record<string, string[]> = {
   'AI Tools': ['Claude', 'GPTCodex', 'AntiGravity', 'Cursor', 'GitHub Copilot', 'GenAI Tools'],
   '3D Tools': ['Blender', 'Maya', 'Substance Painter', 'AutoCAD'],
   'Soft Skills': ['Problem Solving', 'Punctuality', 'Adaptability', 'Creativity', 'Teamwork'],
-  'Core CS':  ['DSA', 'OS', 'DBMS', 'Computer Networks', 'OOP', 'System Design'],
+  'Core CS': ['DSA', 'OS', 'DBMS', 'Computer Networks', 'OOP', 'System Design'],
 }
 // ────────────────────────────────────────────────────────────────────────────
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-6 py-28 bg-surface">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="relative overflow-hidden px-6 py-28 bg-surface">
+      <NodesBackground opacity={0.8} />
+      <div className="relative z-10 max-w-6xl mx-auto">
 
         <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
           <span className="font-mono text-xs text-ink-muted">02</span>

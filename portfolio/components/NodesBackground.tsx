@@ -13,9 +13,9 @@ export default function NodesBackground({ opacity = 1 }: { opacity?: number }) {
     let animId: number
     let lastTime = 0
     let running = true
-    const FPS = 24
+    const FPS = 16
     const INTERVAL = 1000 / FPS
-    const NODE_COUNT = 16
+    const NODE_COUNT = 60
     const s = window.devicePixelRatio || 1
 
     type Node = { x: number; y: number; vx: number; vy: number; r: number }
@@ -25,17 +25,17 @@ export default function NodesBackground({ opacity = 1 }: { opacity?: number }) {
       nodes.length = 0
       for (let i = 0; i < NODE_COUNT; i++) {
         nodes.push({
-          x:  Math.random() * canvas.width,
-          y:  Math.random() * canvas.height,
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
           vx: (Math.random() - 0.5) * 0.3 * s,
           vy: (Math.random() - 0.5) * 0.3 * s,
-          r:  (1.8 + Math.random() * 1.8) * s,
+          r: (1.8 + Math.random() * 1.8) * s,
         })
       }
     }
 
     const resize = () => {
-      canvas.width  = canvas.offsetWidth  * s
+      canvas.width = canvas.offsetWidth * s
       canvas.height = canvas.offsetHeight * s
       initNodes()
     }
