@@ -24,4 +24,4 @@ h1, h2, h3 { font-family: var(--font-syne), sans-serif; }
 ::-webkit-scrollbar        { width: 4px; }
 ::-webkit-scrollbar-track  { background: #EDE8DC; }
 ::-webkit-scrollbar-thumb  { background: #D0CABF; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: #1B4FD8; }
+::-webkit-scrollbar-thumb:hover { background: rgb(27, 79, 216); }
