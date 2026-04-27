@@ -1,6 +1,6 @@
 'use client'
 import { m } from 'framer-motion'
-import { ArrowRight, Download, MapPin } from 'lucide-react'
+import { ArrowRight, ExternalLink, MapPin } from 'lucide-react'
 import TopoBackground from '@/components/TopoBackground'
 
 const rise = (delay = 0) => ({
@@ -58,10 +58,10 @@ export default function Hero() {
               >
                 See my work <ArrowRight size={14} />
               </a>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" type="application/pdf"
                 className="inline-flex items-center gap-2 text-sm text-ink-muted border border-rule px-6 py-3 hover:border-ink hover:text-ink transition-all duration-200"
               >
-                <Download size={14} /> Resume
+                <ExternalLink size={14} /> View Resume
               </a>
             </m.div>
           </div>

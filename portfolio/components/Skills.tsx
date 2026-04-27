@@ -20,8 +20,16 @@ export default function Skills() {
     <section id="skills" className="relative overflow-hidden px-6 py-28 bg-surface">
       <NodesBackground opacity={0.8} />
       <div className="relative z-10 max-w-6xl mx-auto">
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.03 }}
+          viewport={{ once: true }}
+          className="absolute -top-16 -left-10 text-[200px] leading-none font-bold tracking-tighter pointer-events-none select-none -z-10 text-ink"
+        >
+          02
+        </m.div>
 
-        <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
+        <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5 relative z-10">
           <span className="font-mono text-xs text-ink-muted">02</span>
           <h2 className="text-2xl font-bold tracking-tight">Skills</h2>
         </div>
@@ -37,11 +45,19 @@ export default function Skills() {
               <p className="font-mono text-[10px] text-ink-muted uppercase tracking-widest pt-1.5">{cat}</p>
               <div className="flex flex-wrap gap-3">
                 {list.map(skill => (
-                  <span key={skill}
-                    className="font-mono text-xs text-ink border border-rule bg-bg px-3 py-1.5 hover:border-cobalt hover:text-cobalt transition-colors duration-150 cursor-default"
-                  >
-                    {skill}
-                  </span>
+                  <div key={skill} className="relative group">
+                    <span
+                      className="inline-block font-mono text-xs text-ink border border-rule bg-bg px-3 py-1.5 hover:border-cobalt hover:text-cobalt transition-colors duration-150 cursor-default"
+                    >
+                      {skill}
+                    </span>
+                    {/* Tooltip */}
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-ink text-bg text-[10px] px-2 py-1 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      Proficient
+                      {/* Triangle */}
+                      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-ink" />
+                    </div>
+                  </div>
                 ))}
               </div>
             </m.div>

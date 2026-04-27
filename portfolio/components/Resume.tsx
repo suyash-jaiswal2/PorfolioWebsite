@@ -1,6 +1,6 @@
 'use client'
 import { m } from 'framer-motion'
-import { Download, ExternalLink, Award, FileText } from 'lucide-react'
+import { ExternalLink, Award, FileText } from 'lucide-react'
 
 // ── EDIT YOUR DATA ──────────────────────────────────────────────────────────
 const CERTS = [
@@ -26,9 +26,17 @@ const PROFILES = [
 export default function Resume() {
   return (
     <section id="resume" className="px-6 py-28 bg-surface">
-      <div className="max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.03 }}
+          viewport={{ once: true }}
+          className="absolute -top-16 -left-10 text-[200px] leading-none font-bold tracking-tighter pointer-events-none select-none -z-10 text-ink"
+        >
+          04
+        </m.div>
 
-        <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
+        <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5 relative z-10">
           <span className="font-mono text-xs text-ink-muted">04</span>
           <h2 className="text-2xl font-bold tracking-tight">Resume &amp; Credentials</h2>
         </div>
@@ -48,10 +56,10 @@ export default function Resume() {
               </div>
               <p className="font-mono text-xs text-ink-muted mb-1">Last updated · April 2026</p>
               <p className="text-xs text-ink-muted mb-5">One-page · ATS-optimized · PDF</p>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" type="application/pdf"
                 className="flex items-center justify-center gap-2 bg-cobalt text-white text-sm w-full py-3 hover:bg-cobalt-dim transition-colors"
               >
-                <Download size={13} /> Download Resume
+                <ExternalLink size={13} /> View Resume
               </a>
             </m.div>
 

@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState, useRef } from 'react'
+import { m } from 'framer-motion'
 
 const NAV_LINKS = [
   { id: 'projects',     label: 'Projects' },
@@ -66,7 +67,10 @@ export default function Nav() {
             >
               {s.label}
               {active === s.id && (
-                <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-cobalt" />
+                <m.span 
+                  layoutId="nav-indicator"
+                  className="absolute -bottom-0.5 left-0 right-0 h-px bg-cobalt" 
+                />
               )}
             </a>
           ))}
@@ -88,7 +92,7 @@ export default function Nav() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-rule bg-bg px-6 py-4 space-y-4">
+        <div className="md:hidden border-t border-rule bg-bg/80 backdrop-blur-md px-6 py-4 space-y-4">
           {NAV_LINKS.map((s) => (
             <a key={s.id} href={`#${s.id}`} onClick={() => setMenuOpen(false)}
               className="block text-sm text-ink-muted hover:text-ink py-1"

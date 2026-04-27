@@ -55,8 +55,16 @@ export default function Projects() {
     <section id="projects" className="relative overflow-hidden px-6 py-28">
       <NodesBackground opacity={0.7} />
       <div className="relative z-10 max-w-6xl mx-auto">
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.03 }}
+          viewport={{ once: true }}
+          className="absolute -top-16 -left-10 text-[200px] leading-none font-bold tracking-tighter pointer-events-none select-none -z-10 text-ink"
+        >
+          01
+        </m.div>
 
-        <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
+        <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5 relative z-10">
           <span className="font-mono text-xs text-ink-muted">01</span>
           <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
           <span className="font-mono text-xs text-ink-muted ml-auto">{PROJECTS.length + 1} selected works</span>
@@ -71,6 +79,11 @@ export default function Projects() {
         >
           <div className="bg-surface h-56 lg:h-auto flex items-center justify-center border-b lg:border-b-0 lg:border-r border-rule group-hover:border-cobalt transition-colors duration-300 overflow-hidden relative">
             <Image src="/deepfake_thumbnail.png" alt={FEATURED.name} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+              <span className="text-white font-mono text-sm tracking-wide flex items-center gap-2">
+                View Project <ExternalLink size={14} />
+              </span>
+            </div>
           </div>
 
           <div className="p-8 flex flex-col justify-between">
@@ -106,9 +119,18 @@ export default function Projects() {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="border border-rule p-6 flex flex-col gap-4 hover:border-cobalt hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+              className="border border-rule p-6 flex flex-col gap-4 hover:border-cobalt hover:shadow-md hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden bg-bg"
             >
-              <div className="flex items-start justify-between gap-3">
+              {p.live && (
+                <a href={p.live} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10 block" aria-label={`View ${p.name}`}>
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white font-mono text-sm tracking-wide flex items-center gap-2">
+                      View Project <ExternalLink size={14} />
+                    </span>
+                  </div>
+                </a>
+              )}
+              <div className="flex items-start justify-between gap-3 relative z-0">
                 <div className="flex-1">
                   <p className="font-mono text-xs text-ink-muted mb-1">{p.num}</p>
                   <h3 className="font-bold text-sm">{p.name}</h3>

@@ -34,9 +34,17 @@ export default function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden px-6 py-32">
       <TopoBackground opacity={0.6} />
-      <div className="max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.03 }}
+          viewport={{ once: true }}
+          className="absolute -top-16 -left-10 text-[200px] leading-none font-bold tracking-tighter pointer-events-none select-none -z-10 text-ink"
+        >
+          05
+        </m.div>
 
-        <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5">
+        <div className="flex items-baseline gap-4 mb-16 border-b border-rule pb-5 relative z-10">
           <span className="font-mono text-xs text-ink-muted">05</span>
           <h2 className="text-2xl font-bold tracking-tight">Contact</h2>
         </div>
@@ -129,8 +137,17 @@ export default function Contact() {
         </div>
 
         <div className="border-t border-rule mt-24 pt-8 flex flex-wrap items-center justify-between gap-4">
-          <span className="font-mono text-xs text-ink-muted">Suyash Jaiswal · {new Date().getFullYear()}</span>
-          <span className="font-mono text-xs text-ink-muted">Next.js · Tailwind · Vercel</span>
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-xs text-ink-muted">Suyash Jaiswal · {new Date().getFullYear()}</span>
+            <span className="font-mono text-xs text-ink-muted hidden sm:inline">·</span>
+            <span className="font-mono text-xs text-ink-muted hidden sm:inline">Next.js · Tailwind · Vercel</span>
+          </div>
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="font-mono text-xs text-ink-muted hover:text-cobalt transition-colors flex items-center gap-1"
+          >
+            ↑ Back to top
+          </button>
         </div>
       </div>
     </section>
