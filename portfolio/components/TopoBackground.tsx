@@ -20,7 +20,7 @@ export default function TopoBackground({ opacity = 1 }: { opacity?: number }) {
     const DPR = 1                // intentionally ignore retina for background
 
     const resize = () => {
-      canvas.width  = canvas.offsetWidth  * DPR
+      canvas.width = canvas.offsetWidth * DPR
       canvas.height = canvas.offsetHeight * DPR
     }
 
@@ -40,7 +40,7 @@ export default function TopoBackground({ opacity = 1 }: { opacity?: number }) {
 
       const cx = w * 0.65
       const cy = h * 0.5
-      const step = 0.15          // Increased step to reduce points per ring
+      const step = 0.1          // Increased step to reduce points per ring
 
       ctx.lineWidth = 1.5
 
@@ -84,7 +84,7 @@ export default function TopoBackground({ opacity = 1 }: { opacity?: number }) {
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => { 
+      ([entry]) => {
         running = entry.isIntersecting
         if (running && animId === 0) {
           animId = requestAnimationFrame(draw)
@@ -94,7 +94,7 @@ export default function TopoBackground({ opacity = 1 }: { opacity?: number }) {
     )
     observer.observe(canvas)
 
-    const onVisibility = () => { 
+    const onVisibility = () => {
       running = document.visibilityState === 'visible'
       if (running && animId === 0) {
         animId = requestAnimationFrame(draw)
