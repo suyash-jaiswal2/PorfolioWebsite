@@ -15,7 +15,7 @@ export default function NodesBackground({ opacity = 1 }: { opacity?: number }) {
     let running = true
     const FPS = 16
     const INTERVAL = 1000 / FPS
-    const NODE_COUNT = 40
+    const NODE_COUNT = 30 // Reduced from 40 for better performance
     const s = 1 // intentionally ignore retina to save GPU fill-rate
 
     type Node = { x: number; y: number; vx: number; vy: number; r: number }
@@ -93,7 +93,7 @@ export default function NodesBackground({ opacity = 1 }: { opacity?: number }) {
           animId = requestAnimationFrame(draw)
         }
       },
-      { threshold: 0 }
+      { threshold: 0, rootMargin: '-10% 0px' }
     )
     observer.observe(canvas)
 

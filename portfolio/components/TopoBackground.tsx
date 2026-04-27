@@ -16,7 +16,7 @@ export default function TopoBackground({ opacity = 1 }: { opacity?: number }) {
     let running = true
     const FPS = 16
     const INTERVAL = 1000 / FPS
-    const MAX_RINGS = 20          // hard cap — no matter the screen size
+    const MAX_RINGS = 12          // Reduced from 20 for better performance
     const DPR = 1                // intentionally ignore retina for background
 
     const resize = () => {
@@ -40,7 +40,7 @@ export default function TopoBackground({ opacity = 1 }: { opacity?: number }) {
 
       const cx = w * 0.65
       const cy = h * 0.5
-      const step = 0.1          // was 0.09 — fewer points per ring
+      const step = 0.15          // Increased step to reduce points per ring
 
       ctx.lineWidth = 1.5
 
@@ -90,7 +90,7 @@ export default function TopoBackground({ opacity = 1 }: { opacity?: number }) {
           animId = requestAnimationFrame(draw)
         }
       },
-      { threshold: 0 }
+      { threshold: 0, rootMargin: '-10% 0px' }
     )
     observer.observe(canvas)
 

@@ -13,26 +13,38 @@ export default function Nav() {
   const [active,   setActive]   = useState('')
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const sectionsRef = useRef<{ id: string, el: HTMLElement | null }[]>([])
-
   useEffect(() => {
-    sectionsRef.current = NAV_LINKS.map(s => ({
-      id: s.id,
-      el: document.getElementById(s.id)
-    }))
-
-    const onScroll = () => {
+    const handleScroll = () => {
       setScrolled(window.scrollY > 40)
-      for (let i = sectionsRef.current.length - 1; i >= 0; i--) {
-        const section = sectionsRef.current[i]
-        if (section.el && window.scrollY >= section.el.offsetTop - 140) {
-          setActive(section.id)
-          break
-        }
-      }
     }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-40% 0px -40% 0px' }
+    )
+
+    NAV_LINKS.forEach(s => {
+      const el = document.getElementById(s.id)
+      if (el) observer.observe(el)
+    })
+
+    // Set initial active state based on hash or default to empty
+    const currentHash = window.location.hash.replace('#', '')
+    if (currentHash) {
+      setActive(currentHash)
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      observer.disconnect()
+    }
   }, [])
 
   return (
